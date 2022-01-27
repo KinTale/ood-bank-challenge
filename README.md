@@ -63,6 +63,6 @@ Bank                        constructor()
 
 Print
                             constructor(start, end)
-                            this.transaction =                takes start and end date to print statment between those dates.          
+                            this.statement =                takes start and end date to print statment between those dates.          
 
                             printBalance()
