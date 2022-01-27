@@ -39,3 +39,30 @@ date       || credit  || debit  || balance
 
 #### Extended
 - [ ] See a teacher!
+
+DOMIAN
+CLASSES-///////////////////-METHODS-/////////////////////-OUTPUTS
+Data                       constructor(date)
+                            this.date = date                 [int] 
+                            this.deposit =                   [int] 
+                            this.withrawls =                 [int]     
+                            this.balance =                   [int]
+
+
+                            deposit()                       adds to this.deposit
+                            withdrawls()                    adds to this.withdrawls
+                            balance()                       gets from the sum of this.deposit and this.withdrawls 
+
+Bank                        constructor()
+                            this.transactions = []
+
+                            addDeposit(date, money)          open data instance using the date parameter and pushing money into it
+                            withdrawMoney(date, money)       open data instance using the date parameter and splicing money from it
+                            getBlance (date)                 finds data instance using the date parameter and finds the total sum .reduce()
+
+
+Print
+                            constructor(start, end)
+                            this.transaction =                takes start and end date to print statment between those dates.          
+
+                            printBalance()
