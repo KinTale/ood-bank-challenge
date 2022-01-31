@@ -10,7 +10,7 @@ class Data {
     }
     storeCredit(amount) {
         if (!isNaN(amount)) {
-            return this.credit = amount 
+            return this.credit = amount
         } return 'Error'
     }
 
@@ -19,11 +19,6 @@ class Data {
             return this.debit = amount
         } return 'Error'
     }
-
-    getCredit() {
-        return this.credit
-    }
-
 
 
 }

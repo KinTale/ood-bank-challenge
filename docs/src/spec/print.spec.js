@@ -1,40 +1,37 @@
 const Print = require('../print')
 const Bank = require('../bank')
-const Data = require('../data')
+
 
 describe('print', () => {
-    let print
     let bank
-    let data
     beforeEach(() => {
-        print = new Print
-        bank = new Bank 
-        data = new Data
+        bank = new Bank()
+
     })
-
     //TEST 1
-
     it('Print statement', () => {
-        const expected = 'Error'
-        
 
+        const transactions = [
+            bank.debitAccount(500, '14-01-2012'),
+            bank.addCredit(2000, '13-01-2012'),
+            bank.addCredit(1000, '10-01-2012')
+        ]
+        let print = new Print(transactions)
 
-        bank. addCredit(1000, '10-01-2012')
-        bank. addCredit(2000, '13-01-2012')
-        bank.debitAccount(500, '14-01-2012')
-        bank.addBalance()
-        console.log('spc',bank.transactions)
-        let statement = print.printBalance()
+        const expected = print.printBalance()
+        /* what the console prints:
+        ┌─────────┬──────────────┬────────┬───────┬─────────┐
+        │ (index) │     date     │ credit │ debit │ balance │
+        ├─────────┼──────────────┼────────┼───────┼─────────┤
+        │    0    │ '14-01-2012' │   0    │  500  │  2500   │
+        │    1    │ '13-01-2012' │  2000  │   0   │  3000   │
+        │    2    │ '10-01-2012' │  1000  │   0   │  1000   │ 
+        └─────────┴──────────────┴────────┴───────┴─────────┘
+        */
+
+        const statement = print.printBalance()
         expect(statement).toEqual(expected)
     })
-
-
-
-
-
-
-
-
 
 
 })

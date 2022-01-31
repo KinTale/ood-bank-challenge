@@ -1,17 +1,10 @@
-const Bank = require("./bank")
-
 class Print {
-    constructor(){
-    this.statement = []
-}
-    printBalance(){
-        let statement = new Bank()
-        return statement.console.table(statement.transactions)
-
+    constructor(transactions) {
+        this.statement = transactions
     }
-
-
-
+    printBalance() {
+        return console.table(this.statement)
+    }
 }
 // eslint-disable-next-line no-undef
 module.exports = Print
